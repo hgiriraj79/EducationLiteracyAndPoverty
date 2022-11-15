@@ -1,5 +1,5 @@
 ---
-title: "Following is the code used to draw the interpretation"
+title: "Following is the code used to make the interpretation"
 author: "Giriraj"
 date: "2022-11-15"
 output: pdf_document
