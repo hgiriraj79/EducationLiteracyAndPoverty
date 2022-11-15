@@ -1,0 +1,70 @@
+---
+title: "Following is the code used to draw the interpretation"
+author: "Giriraj"
+date: "2022-11-15"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(dplyr)
+
+# loading files for data 
+ppei_features <- read.csv('Datasets/poverty_and_ecomnomic_indicators.csv')
+ppei_labels   <- read.csv('Datasets/train_labels.csv')
+
+# merging loaded files as one
+data <- merge(ppei_features, ppei_labels, by = c('row_id'), all.x=T)
+
+# generating glimpse of data
+glimpse(data)
+```
+
+```{r}
+# performing descriptive analysis on education level
+summary(data$education_level)
+```
+
+```{r}
+# replacing NA with 4 and removing all datapoints with value 4 from the dataset
+data$education_level[is.na(data$education_level) == TRUE] <- 4
+data <- data[data$education_level != 4,]
+```
+
+
+```{r}
+# checking for levels of the variables education and literacy
+table(data$education_level)
+table(data$literacy)
+
+# factoring education_level to have in-depth analysis
+data$education_level.f <- as.factor(data$education_level)
+
+# performing descriptive analysis on education level after treating NA values
+summary(data$education_level)
+
+# factoring literacy to have in-depth analysis
+data$literacy.f <- as.factor(data$literacy)
+
+# re-leveling literacy to use Literacy = TRUE as level 1
+data$literacy.f <- relevel(data$literacy.f, "True")
+levels(data$literacy.f)
+```
+
+```{r}
+# generating an Ordinary Least Square model
+print("Following is the OLS model summary: ")
+ols_model <- lm(poverty_probability ~ data$education_level.f + data$literacy.f, data = data)
+summary(ols_model)
+```
+
+```{r}
+# generating an ANOVA model
+print("Following is the ANOVA model summary: ")
+anova_model <- aov(poverty_probability ~ data$education_level.f + data$literacy.f, data = data)
+summary(anova_model)
+```
