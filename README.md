@@ -6,6 +6,4 @@ This project focuses on making a statistical inference about the effects of Educ
 
 # Interpretation of analysis
 
-![alt text](https://github.com/hgiriraj79/EducationLiteracyAndPoverty/blob/img/img.jpg?raw=true "Interpretation Image.png")
-
 <img src="img/Interpretation Image.png" alt="OLS model summary" title="Summary">
