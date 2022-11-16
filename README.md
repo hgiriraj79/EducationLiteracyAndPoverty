@@ -22,4 +22,4 @@ __Following interpretation can be drawn from the above obtained summary:__
 
 5. The coefficient for data$literacy.fFalse does not differ significantly as the p-value obtained is > 0.05. 
 
-From the above drawn interpretation we can conclude that, as the levels of Education increase, the chances of individual suffering from poverty decreases holding that value for Literacy is TRUE.
+From the above drawn interpretation we can conclude that, as the levels of Education increase, the chances of individual suffering from poverty decreases, holding that value for Literacy is TRUE.
