@@ -10,7 +10,7 @@ This project focuses on making a statistical inference about the effects of Educ
 
 
 
-**Following interpretation can be drawn from the above obtained summary: **
+__Following interpretation can be drawn from the above obtained summary:__
 
 1. The intercept of 0.71 means that when all variables take the value of 0 (all categorical variables are at the reference level), the average probability of poverty is 0.71. That is, when Education Level is at 0 and Literacy is TRUE, the probability that the individual is suffering from poverty is 71%. The p-value obtained for the intercept is < 0 which denotes that the result is statistically significant.
 
